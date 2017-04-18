@@ -40036,5 +40036,12 @@ h3 {
 h4 {
   color: #3f30c9;
 }
+#monLogo {
+  width: 90px;
+}
+section {
+  background-color: black;
+  color: white;
+}
 
 /*# sourceMappingURL=app.css.map */
