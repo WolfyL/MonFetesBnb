@@ -109520,6 +109520,23 @@ angular.module('app')
     });
 
 angular.module('app')
+    .controller('HomeController', function($scope, CurrentUser, UserService) {
+
+      $scope.section = {
+        color : '#edc34e',
+        backColor : '#3e2b2b'
+      };
+      $scope.color = '#edc34e';
+      $scope.backColor = '#3e2b2b';
+
+      UserService.getOne(CurrentUser.user()._id).then(function(res) {
+            $scope.user = res.data;
+            console.log($scope.user.isAdmin);
+        });
+
+    });
+
+angular.module('app')
     .controller('LoginController', function($scope, $state, Auth) {
         $scope.errors = [];
 
@@ -109537,8 +109554,7 @@ angular.module('app')
 
 angular.module('app')
     .controller('MainController', function($scope) {
-      $scope.color = '#edc34e';
-      $scope.backColor = '#3e2b2b';
+      /* Here is your main controller */
     });
 
 angular.module('app')
@@ -109627,7 +109643,7 @@ angular.module('app')
                 views: {
                     'content@': {
                         templateUrl: 'user/home.html',
-                        controller: 'MainController'
+                        controller: 'HomeController'
                     }
                 }
             })
@@ -109743,26 +109759,25 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "</header>\n" +
     "<nav class=\"navbar styleNavbar\" role=\"navigation\" ng-controller=\"NavbarController\">\n" +
     "    <!-- <div class=\"container-fluid\"> -->\n" +
-    "        <!-- <div class=\"navbar-header\">\n" +
+    "    <!-- <div class=\"navbar-header\">\n" +
     "            <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar\">\n" +
     "        <span class=\"sr-only\">Toggle navigation</span> -->\n" +
-    "        <!-- <span class=\"icon-bar\"></span>\n" +
+    "    <!-- <span class=\"icon-bar\"></span>\n" +
     "        <span class=\"icon-bar\"></span>\n" +
     "        <span class=\"icon-bar\"></span> -->\n" +
-    "      <!-- </button> -->\n" +
-    "            <!-- <a class=\"navbar-brand\" href=\"#\"></a>\n" +
+    "    <!-- </button> -->\n" +
+    "    <!-- <a class=\"navbar-brand\" href=\"#\"></a>\n" +
     "        </div> -->\n" +
-    "        <!-- <div class=\"collapse navbar-collapse\" id=\"navbar\"> -->\n" +
-    "            <ul class=\"nav navbar-nav navbar-right\">\n" +
-    "                <li>\n" +
-    "                    <li ui-sref-active=\"active\"><a ui-sref=\"anon.home\">Home</a></li>\n" +
-    "                    <li ui-sref-active=\"active\"><a ui-sref=\"anon.login\" ng-hide=\"auth.isAuthenticated()\">Login</a></li>\n" +
-    "                    <li ui-sref-active=\"active\"><a ui-sref=\"anon.register\" ng-hide=\"auth.isAuthenticated()\">Register</a></li>\n" +
-    "                    <!-- <li ui-sref-active=\"active\"><a ui-sref=\"user.dashboard\" ng-show=\"auth.isAuthenticated()\">Dashboard</a></li> -->\n" +
-    "                    <li><a ng-click=\"logout()\" ng-show=\"auth.isAuthenticated()\" href='#'>Logout</a></li>\n" +
-    "                </li>\n" +
-    "            </ul>\n" +
-    "        </div>\n" +
+    "    <!-- <div class=\"collapse navbar-collapse\" id=\"navbar\"> -->\n" +
+    "    <ul class=\"nav navbar-nav navbar-right\">\n" +
+    "        <li>\n" +
+    "            <li ui-sref-active=\"active\"><a ui-sref=\"anon.home\">Home</a></li>\n" +
+    "            <li ui-sref-active=\"active\"><a ui-sref=\"anon.login\" ng-hide=\"auth.isAuthenticated()\">Login</a></li>\n" +
+    "            <li ui-sref-active=\"active\"><a ui-sref=\"anon.register\" ng-hide=\"auth.isAuthenticated()\">Register</a></li>\n" +
+    "            <!-- <li ui-sref-active=\"active\"><a ui-sref=\"user.dashboard\" ng-show=\"auth.isAuthenticated()\">Dashboard</a></li> -->\n" +
+    "        </li>\n" +
+    "    </ul>\n" +
+    "    </div>\n" +
     "    </div>\n" +
     "</nav>\n"
   );
@@ -109791,7 +109806,7 @@ angular.module("app").run(["$templateCache", function($templateCache) {
   );
 
   $templateCache.put("user/home.html",
-    "<section class=\"section section-quaternary mt-none mb-sm \" style=\"background-color: {{backColor}}; color:{{color}};\">\n" +
+    "<section class=\"section section-quaternary mt-none mb-sm \" style=\"background-color: {{section.backColor}}; color:{{section.color}};\">\n" +
     "    <div class=\"container\">\n" +
     "        <div class=\"row\">\n" +
     "            <div class=\"col-md-12\">\n" +
@@ -109800,21 +109815,21 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "            <div class=\"col-md-12\">\n" +
     "                <form action=\"/trouver-une-salle\" method=\"get\">\n" +
     "                    <div class=\"row\">\n" +
-    "                        <div class=\"col-md-5 \">\n" +
+    "                        <div class=\"col-md-4 \">\n" +
     "                            <div class=\"formBlock select typeahead-container\">\n" +
     "                                <label>Ville ou code postal  :</label>\n" +
     "                                <input type=\"search\" name=\"\" autocomplete=\"off\" placeholder=\"Où ?\" class=\"formDropdown form-control\" />\n" +
     "                            </div>\n" +
     "                        </div>\n" +
     "\n" +
-    "                        <div class=\"col-md-3 \">\n" +
+    "                        <div class=\"col-md-2 \">\n" +
     "                            <div class=\"formBlock select typeahead-container\">\n" +
     "                                <label>Rayon de recherche</label>\n" +
     "                                <input type=\"search\" name=\"\" autocomplete=\"off\" placeholder=\"Rayon ?\" class=\"formDropdown form-control\" />\n" +
     "                            </div>\n" +
     "                        </div>\n" +
     "\n" +
-    "                        <div class=\"col-md-2\">\n" +
+    "                        <div class=\"col-md-3\">\n" +
     "                            <div class=\"formBlock select\">\n" +
     "                                <label>Nbr de personnes : </label>\n" +
     "                                <input type=\"text\" name=\"\" size=\"5\" placeholder=\"Nombre de personnes ?\" class=\" form-control\" />\n" +
@@ -109836,13 +109851,10 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "    </div>\n" +
     "</section>\n" +
     "\n" +
-    "<!-- <div class=\"row\" ng-hide=\"auth.isAdministrator()\">\n" +
-    "    <h1 style=\"color:{{color}}; background-color:{{backColor}}\">test2</h1> Couleur du texte : {{color}} Couleur du fond : {{backColor}}\n" +
-    "</div> -->\n" +
-    "<div class=\"row\" ng-hide=\"auth.isAdministrator()\">\n" +
+    "<div class=\"row\" ng-if=\"user.isAdmin\">\n" +
     "    <label class=\"control-label\">Color</label>\n" +
-    "    <color-picker class='col-sm-1' ng-model=\"color\" options=\"{'format':'hex', 'placeholder': '', 'round': false}\"></color-picker>\n" +
-    "    <color-picker class='col-sm-1' ng-model=\"backColor\" options=\"{'format':'hex', 'placeholder': '', 'round': false}\"></color-picker>\n" +
+    "    <color-picker class='col-sm-1' ng-model=\"section.color\" options=\"{'format':'hex', 'placeholder': '', 'round': false}\"></color-picker>\n" +
+    "    <color-picker class='col-sm-1' ng-model=\"section.backColor\" options=\"{'format':'hex', 'placeholder': '', 'round': false}\"></color-picker>\n" +
     "</div>\n" +
     "\n" +
     "<div class=\"container-fluid\">\n" +
@@ -109870,26 +109882,14 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "    </div>\n" +
     "</header>\n" +
     "<nav class=\"navbar styleNavbar\" role=\"navigation\" ng-controller=\"NavbarController\">\n" +
-    "    <!-- <div class=\"container-fluid\"> -->\n" +
-    "        <!-- <div class=\"navbar-header\">\n" +
-    "            <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar\">\n" +
-    "        <span class=\"sr-only\">Toggle navigation</span> -->\n" +
-    "        <!-- <span class=\"icon-bar\"></span>\n" +
-    "        <span class=\"icon-bar\"></span>\n" +
-    "        <span class=\"icon-bar\"></span> -->\n" +
-    "      <!-- </button> -->\n" +
-    "            <!-- <a class=\"navbar-brand\" href=\"#\"></a>\n" +
-    "        </div> -->\n" +
-    "        <!-- <div class=\"collapse navbar-collapse\" id=\"navbar\"> -->\n" +
-    "            <ul class=\"nav navbar-nav navbar-right\">\n" +
-    "                <li>\n" +
-    "                    <li ui-sref-active=\"active\"><a ui-sref=\"user.home\">Home</a></li>\n" +
-    "                    <li ui-sref-active=\"active\"><a ui-sref=\"user.dashboard\" ng-show=\"auth.isAuthenticated()\">Favoris</a></li>\n" +
-    "                    <li ui-sref-active=\"active\"><a ui-sref=\"user.profile\" ng-show=\"auth.isAuthenticated()\">Profile</a></li>\n" +
-    "                    <li><a ng-click=\"logout()\" ng-show=\"auth.isAuthenticated()\" href='#'>Logout</a></li>\n" +
-    "                </li>\n" +
-    "            </ul>\n" +
-    "        <!-- </div> -->\n" +
+    "    <ul class=\"nav navbar-nav navbar-right\">\n" +
+    "        <li>\n" +
+    "            <li ui-sref-active=\"active\"><a ui-sref=\"user.home\">Home</a></li>\n" +
+    "            <li ui-sref-active=\"active\"><a ui-sref=\"user.dashboard\" ng-show=\"auth.isAuthenticated()\">Favoris</a></li>\n" +
+    "            <li ui-sref-active=\"active\"><a ui-sref=\"user.profile\" ng-show=\"auth.isAuthenticated()\">Profile</a></li>\n" +
+    "            <li><a ng-click=\"logout()\" ng-show=\"auth.isAuthenticated()\" href='#'>Logout</a></li>\n" +
+    "        </li>\n" +
+    "    </ul>\n" +
     "    </div>\n" +
     "</nav>\n"
   );

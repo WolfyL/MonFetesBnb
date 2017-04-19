@@ -12,15 +12,15 @@ module.exports = (app) => {
 
     var user = new User();
 
-    router.get('/isAdmin', Auth.isAdministrator, function(req, res) {
-        res.sendStatus(200);
-    });
+    // router.get('/isAdmin', Auth.isAdministrator, function(req, res) {
+    //     res.sendStatus(200);
+    // });
 
     app.post('/login', user.connect);
 
     router.get('/', Auth.isAdministrator, user.findAll);
 
-    router.get('/:id', Auth.isAdministrator, user.findById);
+    router.get('/:id', Auth.hasAuthorization, user.findById);
 
     router.post('/', user.create);
 
