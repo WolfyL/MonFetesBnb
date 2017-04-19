@@ -93,17 +93,17 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "    </div>\n" +
     "</header>\n" +
     "<nav class=\"navbar styleNavbar\" role=\"navigation\" ng-controller=\"NavbarController\">\n" +
-    "    <div class=\"container-fluid\">\n" +
-    "        <div class=\"navbar-header\">\n" +
+    "    <!-- <div class=\"container-fluid\"> -->\n" +
+    "        <!-- <div class=\"navbar-header\">\n" +
     "            <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar\">\n" +
-    "        <span class=\"sr-only\">Toggle navigation</span>\n" +
+    "        <span class=\"sr-only\">Toggle navigation</span> -->\n" +
+    "        <!-- <span class=\"icon-bar\"></span>\n" +
     "        <span class=\"icon-bar\"></span>\n" +
-    "        <span class=\"icon-bar\"></span>\n" +
-    "        <span class=\"icon-bar\"></span>\n" +
-    "      </button>\n" +
-    "            <a class=\"navbar-brand\" href=\"#\"></a>\n" +
-    "        </div>\n" +
-    "        <div class=\"collapse navbar-collapse\" id=\"navbar\">\n" +
+    "        <span class=\"icon-bar\"></span> -->\n" +
+    "      <!-- </button> -->\n" +
+    "            <!-- <a class=\"navbar-brand\" href=\"#\"></a>\n" +
+    "        </div> -->\n" +
+    "        <!-- <div class=\"collapse navbar-collapse\" id=\"navbar\"> -->\n" +
     "            <ul class=\"nav navbar-nav navbar-right\">\n" +
     "                <li>\n" +
     "                    <li ui-sref-active=\"active\"><a ui-sref=\"anon.home\">Home</a></li>\n" +
@@ -215,17 +215,17 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "    </div>\n" +
     "</header>\n" +
     "<nav class=\"navbar styleNavbar\" role=\"navigation\" ng-controller=\"NavbarController\">\n" +
-    "    <div class=\"container-fluid\">\n" +
-    "        <div class=\"navbar-header\">\n" +
+    "    <!-- <div class=\"container-fluid\"> -->\n" +
+    "        <!-- <div class=\"navbar-header\">\n" +
     "            <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar\">\n" +
-    "        <span class=\"sr-only\">Toggle navigation</span>\n" +
+    "        <span class=\"sr-only\">Toggle navigation</span> -->\n" +
+    "        <!-- <span class=\"icon-bar\"></span>\n" +
     "        <span class=\"icon-bar\"></span>\n" +
-    "        <span class=\"icon-bar\"></span>\n" +
-    "        <span class=\"icon-bar\"></span>\n" +
-    "      </button>\n" +
-    "            <a class=\"navbar-brand\" href=\"#\"></a>\n" +
-    "        </div>\n" +
-    "        <div class=\"collapse navbar-collapse\" id=\"navbar\">\n" +
+    "        <span class=\"icon-bar\"></span> -->\n" +
+    "      <!-- </button> -->\n" +
+    "            <!-- <a class=\"navbar-brand\" href=\"#\"></a>\n" +
+    "        </div> -->\n" +
+    "        <!-- <div class=\"collapse navbar-collapse\" id=\"navbar\"> -->\n" +
     "            <ul class=\"nav navbar-nav navbar-right\">\n" +
     "                <li>\n" +
     "                    <li ui-sref-active=\"active\"><a ui-sref=\"user.home\">Home</a></li>\n" +
@@ -234,7 +234,7 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "                    <li><a ng-click=\"logout()\" ng-show=\"auth.isAuthenticated()\" href='#'>Logout</a></li>\n" +
     "                </li>\n" +
     "            </ul>\n" +
-    "        </div>\n" +
+    "        <!-- </div> -->\n" +
     "    </div>\n" +
     "</nav>\n"
   );

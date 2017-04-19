@@ -40045,12 +40045,22 @@ h4 {
   background-size: cover;
 }
 section {
-  background-color: black;
+  background-color: #3e2b2b;
   color: white;
 }
 .styleNavbar {
-  background-color: black;
+  background-color: #3e2b2b;
   margin-bottom: -50px;
+}
+.nav {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+nav {
+  box-shadow: none;
+}
+navbar-inverse {
+  background-color: #3e2b2b !important;
 }
 
 /*# sourceMappingURL=app.css.map */

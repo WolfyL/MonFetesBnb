@@ -5,6 +5,7 @@
 @gris : #c7b299;
 @vert : #9fbf3f;
 @blue : #3f30c9;
+@black : #3e2b2b;
 
 h1{
   color : @jaune;
@@ -30,11 +31,24 @@ h4{
 }
 
 section{
-  background-color: black;
+  background-color: @black;
   color: white;
 }
 
 .styleNavbar{
-    background-color: black;
+    background-color: @black;
     margin-bottom: -50px;
+}
+
+.nav{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+nav{
+  box-shadow: none;
+}
+
+navbar-inverse{
+  background-color: @black!important;
 }
