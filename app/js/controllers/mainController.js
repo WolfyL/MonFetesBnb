@@ -1,4 +1,5 @@
 angular.module('app')
     .controller('MainController', function($scope) {
-      /* Here is your main controller */
+      $scope.color = '#edc34e';
+      $scope.backColor = '#3e2b2b';
     });

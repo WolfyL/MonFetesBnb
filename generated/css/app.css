@@ -40328,18 +40328,6 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 }
 
 
-h1 {
-  color: #edc34e;
-}
-h2 {
-  color: #c7b299;
-}
-h3 {
-  color: #9fbf3f;
-}
-h4 {
-  color: #3f30c9;
-}
 #monLogo {
   margin-left: 150px;
   width: 200px;
@@ -40350,10 +40338,6 @@ h4 {
 }
 #profileTop {
   margin-top: 51px;
-}
-section {
-  background-color: #3e2b2b;
-  color: white;
 }
 .styleNavbar {
   background-color: #3e2b2b;

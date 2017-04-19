@@ -1,12 +1,7 @@
 angular.module("app").run(["$templateCache", function($templateCache) {
 
   $templateCache.put("anon/home.html",
-    "<!-- <h1>Couleur1</h1>\n" +
-    "<h2>Couleur2</h2>\n" +
-    "<h3>Couleur3</h3>\n" +
-    "<h4>Couleur4</h4> -->\n" +
-    "\n" +
-    "<section class=\"section section-quaternary mt-none mb-sm \">\n" +
+    "<section class=\"section section-quaternary mt-none mb-sm \" style=\"background-color: {{backColor}}; color:{{color}};\">\n" +
     "    <div class=\"container\">\n" +
     "        <div class=\"row\">\n" +
     "\n" +
@@ -20,21 +15,21 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "                        <div class=\"col-md-5 \">\n" +
     "                            <div class=\"formBlock select typeahead-container\">\n" +
     "                                <label>Ville ou code postal  :</label>\n" +
-    "                                <input type=\"search\" name=\"trouver_salle_type[lieu]\" autocomplete=\"off\" placeholder=\"Où ?\" class=\"formDropdown form-control\" />\n" +
+    "                                <input type=\"search\" name=\"\" autocomplete=\"off\" placeholder=\"Où ?\" class=\"formDropdown form-control\" />\n" +
     "                            </div>\n" +
     "                        </div>\n" +
     "\n" +
     "                        <div class=\"col-md-3 \">\n" +
     "                            <div class=\"formBlock select typeahead-container\">\n" +
     "                                <label>Rayon de recherche</label>\n" +
-    "                                <input type=\"search\" name=\"trouver_salle_type[lieu]\" autocomplete=\"off\" placeholder=\"Rayon ?\" class=\"formDropdown form-control\" />\n" +
+    "                                <input type=\"search\" name=\"\" autocomplete=\"off\" placeholder=\"Rayon ?\" class=\"formDropdown form-control\" />\n" +
     "                            </div>\n" +
     "                        </div>\n" +
     "\n" +
     "                        <div class=\"col-md-2\">\n" +
     "                            <div class=\"formBlock select\">\n" +
     "                                <label>Nbr de personnes : </label>\n" +
-    "                                <input type=\"text\" name=\"trouver_salle_type[nombre_personnes]\" size=\"5\" placeholder=\"Nombre de personnes ?\" class=\" form-control\" />\n" +
+    "                                <input type=\"text\" name=\"\" size=\"5\" placeholder=\"Nombre de personnes ?\" class=\" form-control\" />\n" +
     "                            </div>\n" +
     "                        </div>\n" +
     "                    </div>\n" +
@@ -44,9 +39,9 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "                            <button type=\"submit\" class=\"btn btn-primary btn-lg pull-right\"><i class=\"fa fa-search fa-lg\"></i> Lancer la recherche</button>\n" +
     "                        </div>\n" +
     "                    </div>\n" +
-    "                    <input type=\"hidden\" name=\"trouver_salle_type[lieu_id]\" value=\"\" class=\" form-control\" />\n" +
-    "                    <input type=\"hidden\" name=\"trouver_salle_type[type]\" value=\"\" class=\" form-control\" />\n" +
-    "                    <input type=\"hidden\" name=\"trouver_salle_type[rayon]\" class=\" form-control\" />\n" +
+    "                    <input type=\"hidden\" name=\"\" value=\"\" class=\" form-control\" />\n" +
+    "                    <input type=\"hidden\" name=\"\" value=\"\" class=\" form-control\" />\n" +
+    "                    <input type=\"hidden\" name=\"\" class=\" form-control\" />\n" +
     "                </form>\n" +
     "            </div>\n" +
     "        </div>\n" +
@@ -55,17 +50,6 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "\n" +
     "<div class=\"col-lg-offset-3 col-lg-6\">\n" +
     "    <img src=\"https://i.stack.imgur.com/D167A.png\" alt=\"\">\n" +
-    "</div>\n" +
-    "\n" +
-    "<div class=\"row\" ng-show=\"auth.isAdministrator()\">\n" +
-    "  <h1 style=\"color:{{color}}; background-color:{{backColor}}\">test2</h1>\n" +
-    "  Couleur du texte : {{color}}\n" +
-    "  Couleur du fond : {{backColor}}\n" +
-    "</div>\n" +
-    "<div class=\"row\"  ng-show=\"auth.isAdministrator()\">\n" +
-    "    <label class=\"control-label\">Color</label>\n" +
-    "    <color-picker class='col-sm-1' ng-model=\"color\" options=\"{'format':'hex', 'placeholder': '', 'round': false}\"></color-picker>\n" +
-    "    <color-picker class='col-sm-1' ng-model=\"backColor\" options=\"{'format':'hex', 'placeholder': '', 'round': false}\"></color-picker>\n" +
     "</div>\n"
   );
 
@@ -153,7 +137,7 @@ angular.module("app").run(["$templateCache", function($templateCache) {
   );
 
   $templateCache.put("user/home.html",
-    "<section class=\"section section-quaternary mt-none mb-sm \">\n" +
+    "<section class=\"section section-quaternary mt-none mb-sm \" style=\"background-color: {{backColor}}; color:{{color}};\">\n" +
     "    <div class=\"container\">\n" +
     "        <div class=\"row\">\n" +
     "            <div class=\"col-md-12\">\n" +
