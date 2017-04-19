@@ -1,0 +1,61 @@
+<section class="section section-quaternary mt-none mb-sm " style="background-color: {{backColor}}; color:{{color}};">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Trouver une salle à louer proche de chez vous</h1>
+            </div>
+            <div class="col-md-12">
+                <form action="/trouver-une-salle" method="get">
+                    <div class="row">
+                        <div class="col-md-5 ">
+                            <div class="formBlock select typeahead-container">
+                                <label>Ville ou code postal  :</label>
+                                <input type="search" name="" autocomplete="off" placeholder="Où ?" class="formDropdown form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 ">
+                            <div class="formBlock select typeahead-container">
+                                <label>Rayon de recherche</label>
+                                <input type="search" name="" autocomplete="off" placeholder="Rayon ?" class="formDropdown form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="formBlock select">
+                                <label>Nbr de personnes : </label>
+                                <input type="text" name="" size="5" placeholder="Nombre de personnes ?" class=" form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 pt-lg">
+                            <button type="submit" class="btn btn-primary btn-lg pull-right"><i class="fa fa-search fa-lg"></i> Lancer la recherche</button>
+                        </div>
+                    </div>
+                    <input type="hidden" name="trouver_salle_type[lieu_id]" value="" class=" form-control" />
+                    <input type="hidden" name="trouver_salle_type[type]" value="" class=" form-control" />
+                    <input type="hidden" name="trouver_salle_type[rayon]" class=" form-control" />
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <div class="row" ng-hide="auth.isAdministrator()">
+    <h1 style="color:{{color}}; background-color:{{backColor}}">test2</h1> Couleur du texte : {{color}} Couleur du fond : {{backColor}}
+</div> -->
+<div class="row" ng-hide="auth.isAdministrator()">
+    <label class="control-label">Color</label>
+    <color-picker class='col-sm-1' ng-model="color" options="{'format':'hex', 'placeholder': '', 'round': false}"></color-picker>
+    <color-picker class='col-sm-1' ng-model="backColor" options="{'format':'hex', 'placeholder': '', 'round': false}"></color-picker>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-offset-3 col-lg-6">
+            <img src="https://i.stack.imgur.com/D167A.png" alt="">
+        </div>
+    </div>
+</div>

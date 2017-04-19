@@ -1,12 +1,25 @@
-h1 {
-  color: #edc34e;
+#monLogo {
+  margin-left: 150px;
+  width: 200px;
 }
-h2 {
-  color: #c7b299;
+#head_top {
+  background-image: url(http://www.entrebeauceetperche.fr/public/images/header.jpg);
+  background-size: cover;
 }
-h3 {
-  color: #9fbf3f;
+#profileTop {
+  margin-top: 51px;
 }
-h4 {
-  color: #3f30c9;
+.styleNavbar {
+  background-color: #3e2b2b;
+  margin-bottom: -50px;
+}
+.nav {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+nav {
+  box-shadow: none;
+}
+navbar-inverse {
+  background-color: #3e2b2b !important;
 }
