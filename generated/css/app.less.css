@@ -18,6 +18,9 @@ h4 {
   background-image: url(http://www.entrebeauceetperche.fr/public/images/header.jpg);
   background-size: cover;
 }
+#profileTop {
+  margin-top: 51px;
+}
 section {
   background-color: #3e2b2b;
   color: white;
