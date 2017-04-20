@@ -109569,8 +109569,12 @@ angular.module('app')
     });
 
 angular.module('app')
-    .controller('ProfileController', function($scope, CurrentUser) {
-  
+    .controller('ProfileController', function($scope, CurrentUser, UserService) {
+      UserService.getOne(CurrentUser.user()._id).then(function(res) {
+            $scope.user = res.data;
+            console.log($scope.user);
+        });
+
     });
 
 angular.module('app')
@@ -109897,14 +109901,6 @@ angular.module("app").run(["$templateCache", function($templateCache) {
   $templateCache.put("user/profile.html",
     "<div id=\"profileTop\">\n" +
     "    Profile de {{user.email}}\n" +
-    "    <div class=\"row\" ng-show=\"Auth.isAdministrator()\">\n" +
-    "        <h1 style=\"color:{{color}}; background-color:{{backColor}}\">test2</h1> Couleur du texte : {{color}} Couleur du fond : {{backColor}}\n" +
-    "    </div>\n" +
-    "    <div class=\"row\">\n" +
-    "        <label class=\"control-label\">Color</label>\n" +
-    "        <color-picker class='col-sm-1' ng-model=\"color\" options=\"{'format':'hex', 'placeholder': '', 'round': false}\"></color-picker>\n" +
-    "        <color-picker class='col-sm-1' ng-model=\"backColor\" options=\"{'format':'hex', 'placeholder': '', 'round': false}\"></color-picker>\n" +
-    "    </div>\n" +
     "</div>\n"
   );
 
