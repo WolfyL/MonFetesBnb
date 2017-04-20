@@ -1,11 +1,9 @@
 <div id="profileTop">
-    Profile de {{user.email}}
-    <div class="row" ng-show="Auth.isAdministrator()">
-        <h1 style="color:{{color}}; background-color:{{backColor}}">test2</h1> Couleur du texte : {{color}} Couleur du fond : {{backColor}}
-    </div>
-    <div class="row">
-        <label class="control-label">Color</label>
-        <color-picker class='col-sm-1' ng-model="color" options="{'format':'hex', 'placeholder': '', 'round': false}"></color-picker>
-        <color-picker class='col-sm-1' ng-model="backColor" options="{'format':'hex', 'placeholder': '', 'round': false}"></color-picker>
-    </div>
+  <h3 style="text-decoration : underline">Profile de {{user.email}}</h3>
+  <div class="container-fluid" style="border : 1px black solid; border-radius: 5px;">
+    <label style="color: black;">Nom : </label><br/>
+    <label style="color: black;">Prénom : </label><br/>
+    <label style="color: black;">Email : {{user.email}}</label> <br/>
+    <button type="button" ng-click="changePassword()">Change password</button>
+  </div>
 </div>
