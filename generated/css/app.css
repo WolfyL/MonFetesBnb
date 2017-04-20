@@ -40339,6 +40339,10 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 #profileTop {
   margin-top: 51px;
 }
+section {
+  background-color: #3e2b2b;
+  color: #edc34e;
+}
 .styleNavbar {
   background-color: #3e2b2b;
   margin-bottom: -50px;
